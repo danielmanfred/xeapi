@@ -1,6 +1,7 @@
 package main;
 
-import control.ContaControl;
+import service.*;
+import util.ConnectionDatabase;
 
 public class Main {
 
@@ -8,13 +9,16 @@ public class Main {
 		
 	}
 	
+	
 	public static void main(String[] args) {
 		
-		ContaControl control = new ContaControl();
+		ConnectionDatabase database = new ConnectionDatabase();
 		
-		control.criarConta("John", 9, "lsd2");;
+		DemandaService service = new DemandaService(database);
 		
-		control.desconectar();
+		service.demandar(10,3);
+		
+		database.desconectar();
 	}
 
 }

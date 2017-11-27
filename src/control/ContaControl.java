@@ -2,16 +2,19 @@ package control;
 
 import service.UsuarioService;
 import util.ConnectionDatabase;
+import utility.Conexao;
 
 public class ContaControl extends UsuarioService {
 	
 	
+	public ContaControl(Conexao conexao) {
+		super(conexao);
+		// TODO Auto-generated constructor stub
+	}
+
 	static ConnectionDatabase database = new ConnectionDatabase();
 	
-	public ContaControl() {
-		super(database);
-		database.conectar();
-	}
+	
 
 	public void desconectar() {
 		database.desconectar();

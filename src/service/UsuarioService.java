@@ -8,15 +8,13 @@ import dao.UsuarioDAO;
 import domain.Usuario;
 import utility.Conexao;
 
-public class UsuarioService {
+public class UsuarioService extends GenericService {
 
 	private List<Usuario> usuarios;
 	private Usuario usuario;
 	
-	Conexao conexao;
-	
 	public UsuarioService(Conexao conexao) {
-		this.conexao = conexao;
+		setConexao(conexao);
 	}
 
 	public List<Usuario> getUsuarios() {
@@ -81,7 +79,6 @@ public class UsuarioService {
 
 			statement.setString(1, usuario.getNome());
 			statement.setInt(2, id);
-			
 			statement.executeUpdate();
 			System.out.println("Nome alterado com sucesso");
 		} catch (SQLException e) {
