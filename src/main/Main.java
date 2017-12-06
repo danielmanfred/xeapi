@@ -14,9 +14,15 @@ public class Main {
 		
 		ConnectionDatabase database = new ConnectionDatabase();
 		
-		DemandaService service = new DemandaService(database);
+		UsuarioService service = new UsuarioService(database);
 		
-		service.demandar(10,3);
+		service.logar("Dom Pedro II", "omem");
+		
+		//service.ofertar("Memória Ram", "2 GB", 1, 20.00);
+		
+		//service.selecionarOfertaNaoDemandada(3);
+		
+		service.selecionarOfertaDemandada(7);
 		
 		database.desconectar();
 	}
