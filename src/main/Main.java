@@ -3,9 +3,9 @@ package main;
 import service.*;
 import util.ConnectionDatabase;
 
-public class Main {
+public class main {
 
-	public Main() {
+	public main() {
 		
 	}
 	
@@ -16,13 +16,7 @@ public class Main {
 		
 		UsuarioService service = new UsuarioService(database);
 		
-		service.logar("Dom Pedro II", "omem");
-		
-		//service.ofertar("Memória Ram", "2 GB", 1, 20.00);
-		
-		//service.selecionarOfertaNaoDemandada(3);
-		
-		service.selecionarOfertaDemandada(7);
+		service.selecionarOfertaDemandada(4);
 		
 		database.desconectar();
 	}
